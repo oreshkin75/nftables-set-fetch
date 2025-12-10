@@ -46,10 +46,10 @@ test -d "$LIST_DIR" || mkdir -p "$LIST_DIR"
 
 # Create sets if they don't exist
 if ! nft list set inet fw4 "$SET4" >/dev/null 2>&1; then
-    nft add set inet fw4 "$SET4" { type ipv4_addr \; comment \"Set "$NAME" - IPv4\" \;} || exit 1
+    nft add set inet fw4 "$SET4" { type ipv4_addr \; flags interval \; auto-merge \; comment \"Set "$NAME" - IPv4\" \;} || exit 1
 fi
 if ! nft list set inet fw4 "$SET6" >/dev/null 2>&1; then
-    nft add set inet fw4 "$SET6" { type ipv6_addr \; comment \"Set "$NAME" - IPv6\" \;} || exit 1
+    nft add set inet fw4 "$SET6" { type ipv6_addr \; flags interval \; auto-merge \; comment \"Set "$NAME" - IPv6\" \;} || exit 1
 fi
 
 # Check if we need to fetch the IP list
