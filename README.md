@@ -1,4 +1,4 @@
-# Nftables set fetch
+# Nftables set fetch (works with CIDRs)
 
 ## Description
 
